@@ -19,5 +19,12 @@
         android:layout_below="@+id/recyclerView"
         android:layout_alignParentEnd="true"
         android:background="@android:drawable/ic_menu_add"
-        android:onClick="addCity"/>
+        android:onClick="addCity" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Удалить Чебоксары!!"
+        android:onClick="deleteCity" />
 </RelativeLayout>

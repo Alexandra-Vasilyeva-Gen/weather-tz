@@ -36,4 +36,19 @@ class IOHelper {
         }
         return resList
     }
+
+    fun deleteCity(context: Context, cityName: String) {
+        var resList = readFile(context)
+        resList.remove(cityName)
+        try {
+            val fos = context.openFileOutput(FILE_NAME, Context.MODE_PRIVATE)
+            for (s in resList) {
+                fos.write((s+"\n").toByteArray())
+            }
+            fos.close()
+        }
+        catch (e: IOException) {
+            e.printStackTrace()
+        }
+    }
 }

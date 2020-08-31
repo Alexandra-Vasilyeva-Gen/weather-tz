@@ -69,6 +69,7 @@ class MainActivity : AppCompatActivity() {
         startActivityForResult(intent, 1)
     }
 
+    //TODO: Pass whole city list from ManageCitiesActivity
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (data == null)

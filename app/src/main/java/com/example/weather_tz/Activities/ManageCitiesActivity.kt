@@ -8,11 +8,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.weather_tz.CardAdapter
-import com.example.weather_tz.JSONParser
+import com.example.weather_tz.*
 import com.example.weather_tz.Models.Weather
-import com.example.weather_tz.R
-import com.example.weather_tz.WeatherClient
 
 class ManageCitiesActivity : AppCompatActivity() {
     private lateinit var cardRecycler: RecyclerView
@@ -55,7 +52,7 @@ class ManageCitiesActivity : AppCompatActivity() {
             super.onPostExecute(result)
             if (result != null) {
                 weathers.add(result)
-                cardAdapter.notifyDataSetChanged();
+                cardAdapter.notifyDataSetChanged()
             }
         }
     }
@@ -81,5 +78,11 @@ class ManageCitiesActivity : AppCompatActivity() {
             setResult(Activity.RESULT_OK, intent)
         }
         finish()
+    }
+//TODO rewrite for any city
+    fun deleteCity(view: View) {
+        IOHelper().deleteCity(this, "Cheboksary")
+        weathers.removeIf{it.location == "Cheboksary"}
+        cardAdapter.notifyDataSetChanged()
     }
 }

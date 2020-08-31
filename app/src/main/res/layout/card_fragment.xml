@@ -27,5 +27,11 @@
             android:layout_centerVertical="true"
             android:id="@+id/temperature"
             android:textSize="25dp"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:background="@android:drawable/ic_delete"
+            android:onClick="deleteCity"/>
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
